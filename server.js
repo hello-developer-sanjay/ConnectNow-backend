@@ -32,7 +32,9 @@ app.get('/protectedRoute', protect, (req, res) => {
 });
 app.use('/api/users', userRoutes);
 app.use('/api/messages', messageRoutes);
-
+app.get('/', (req, res) => {
+  res.send('Welcome to My API');
+});
 const PORT = process.env.PORT || 5000;
 socketHandler(io);
 
